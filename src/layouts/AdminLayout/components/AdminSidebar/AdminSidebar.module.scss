@@ -1,0 +1,17 @@
+.wrapper {
+    ul {
+        margin: 20px 0;
+        display: flex;
+    }
+    li {
+        padding: 0 20px;
+    }
+}
+.item {
+    color: orange;
+}
+
+.active {
+    color: red;
+    font-weight: 600;
+}
