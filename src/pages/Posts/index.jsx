@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import Loading from "../../components/Loading";
+import Pagination from "../../components/Pagination";
+
 function Posts() {
     const [params, setParams] = useSearchParams();
     const [posts, setPosts] = useState([]);
@@ -34,6 +36,8 @@ function Posts() {
 
     if (isLoading) return <Loading />;
 
+    const totalPages = 5;
+
     return (
         <div>
             <h1>Posts</h1>
@@ -48,68 +52,12 @@ function Posts() {
             </ul>
 
             <h2>Pagination: </h2>
-            <ul
-                style={{
-                    display: "flex",
-                    cursor: "pointer",
-                }}
-            >
-                <button
-                    type="button"
-                    style={{
-                        border: "1px solid #333",
-                        padding: "2px 4px",
-                        background: page === 1 ? "#ccc" : "#666",
-                        color: "#fff",
-                    }}
-                    disabled={page === 1}
-                    onClick={() => {
-                        changePage(page - 1);
-                    }}
-                >
-                    Prev
-                </button>
 
-                {Array(5)
-                    .fill(null)
-                    .map((_, index) => {
-                        const pageNum = index + 1;
-                        const isActive = page === pageNum;
-                        return (
-                            <li
-                                key={index}
-                                style={{
-                                    border: "1px solid #333",
-                                    padding: "2px 4px ",
-                                    color: isActive ? "#fff" : "#333",
-                                    background: isActive ? "#333" : "#fff",
-                                }}
-                                onClick={() => {
-                                    changePage(pageNum);
-                                }}
-                            >
-                                {pageNum}
-                            </li>
-                        );
-                    })}
-
-                <button
-                    type="button"
-                    style={{
-                        border: "1px solid #333",
-                        padding: "2px 4px",
-                        background: page === 5 ? "#ccc" : "#666",
-                        color: "#fff",
-                    }}
-                    // chỉ button mới hỗ trợ disabled
-                    disabled={page === 5}
-                    onClick={() => {
-                        changePage(page + 1);
-                    }}
-                >
-                    Next
-                </button>
-            </ul>
+            <Pagination
+                currentPage={page}
+                totalPages={totalPages}
+                onPageChange={changePage}
+            />
         </div>
     );
 }
