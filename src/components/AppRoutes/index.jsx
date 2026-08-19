@@ -20,9 +20,13 @@ import User from "../../pages/User";
 import Settings from "../../pages/Settings";
 import NotFound from "../../pages/NotFound";
 
+// component
+import ScrollToTop from '../ScrollToTop'
+
 function AppRoutes() {
     return (
         <Router>
+            <ScrollToTop />
             <Routes>
                 <Route path="/admin" element={<AdminLayout />}>
                     <Route index element={<Dashboard />} />

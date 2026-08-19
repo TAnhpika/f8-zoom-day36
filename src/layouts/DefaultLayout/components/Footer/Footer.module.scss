@@ -1,0 +1,28 @@
+.wrapper {
+    margin-top: 200px;
+    padding: 20px 30px;
+    color: #fff;
+    background: #858df8;
+    
+    h1 {
+        font-weight: 600;
+        font-size: 20px;
+    }
+}
+
+ul {
+    display: flex;
+
+    li {
+        margin: 20px;
+    }
+
+    .item {
+        color: #fff;
+    }
+}
+
+.active {
+    color: #fff;
+    text-decoration: underline;
+}
