@@ -1,0 +1,10 @@
+.pagination {
+    display: flex;
+
+    button, li {
+        border: 1px solid #333;
+        padding: 2px 4px;
+        color: #fff;
+        cursor: pointer;
+    }
+}

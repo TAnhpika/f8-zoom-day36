@@ -1,18 +1,12 @@
+import styles from "./Pagination.module.scss";
+
 function Pagination({ currentPage, totalPages, onPageChange }) {
     return (
-        <ul
-            style={{
-                display: "flex",
-            }}
-        >
+        <ul className={styles.pagination}>
             <button
                 type="button"
                 style={{
-                    border: "1px solid #333",
-                    padding: "2px 4px",
                     background: currentPage === 1 ? "#ccc" : "blue",
-                    color: "#fff",
-                    cursor: "pointer",
                 }}
                 disabled={currentPage === 1}
                 onClick={() => {
@@ -25,11 +19,7 @@ function Pagination({ currentPage, totalPages, onPageChange }) {
             <button
                 type="button"
                 style={{
-                    border: "1px solid #333",
-                    padding: "2px 4px",
                     background: currentPage === 1 ? "#ccc" : "orange",
-                    color: "#fff",
-                    cursor: "pointer",
                 }}
                 disabled={currentPage === 1}
                 onClick={() => {
@@ -48,8 +38,6 @@ function Pagination({ currentPage, totalPages, onPageChange }) {
                         <li
                             key={index}
                             style={{
-                                border: "1px solid #333",
-                                padding: "2px 4px ",
                                 color: isActive ? "#fff" : "#333",
                                 background: isActive ? "#333" : "#fff",
                                 cursor: "default",
@@ -59,14 +47,11 @@ function Pagination({ currentPage, totalPages, onPageChange }) {
                         </li>
                     );
                 })}
+
             <button
                 type="button"
                 style={{
-                    border: "1px solid #333",
-                    padding: "2px 4px",
                     background: currentPage === totalPages ? "#ccc" : "orange",
-                    color: "#fff",
-                    cursor: "pointer",
                 }}
                 // chỉ button mới hỗ trợ disabled
                 disabled={currentPage === totalPages}
@@ -80,11 +65,7 @@ function Pagination({ currentPage, totalPages, onPageChange }) {
             <button
                 type="button"
                 style={{
-                    border: "1px solid #333",
-                    padding: "2px 4px",
                     background: currentPage === totalPages ? "#ccc" : "blue",
-                    color: "#fff",
-                    cursor: "pointer",
                 }}
                 disabled={currentPage === totalPages}
                 onClick={() => {
