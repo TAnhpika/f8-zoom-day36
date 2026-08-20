@@ -4,12 +4,24 @@ import styles from "./Footer.module.scss";
 function Footer() {
     const items = [
         {
+            to: "/",
+            title: "Home",
+        },
+        {
+            to: "/posts",
+            title: "Posts",
+        },
+        {
             to: "/contact",
             title: "Contact",
         },
         {
             to: "/privacy",
             title: "Privacy",
+        },
+        {
+            to: "/admin",
+            title: "Admin layout",
         },
     ];
     return (
